@@ -1,0 +1,392 @@
+/* --- Jeton-Inspired Gradient and Minimalist Styles (Final Version) --- */
+
+:root {
+    /* Gradients for Jeton Style */
+    --gradient-start: #ff7e5f; 
+    --gradient-end: #feb47b; 
+    
+    /* Persona Card Colors (Retaining the red for data hierarchy) */
+    --primary-color: #ffffff; /* Main text/card background */
+    --secondary-color: #c62828; /* Deep Red (Data Highlight) */
+    
+    --text-color-dark: #212121;
+    --text-color-light: #555;
+    
+    --border-radius: 12px;
+    --shadow-heavy: 0 10px 30px rgba(0, 0, 0, 0.15); 
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* --- Gradient Background --- */
+.gradient-bg {
+    background-image: linear-gradient(to right, var(--gradient-start) 0%, var(--gradient-end) 100%);
+    min-height: 100vh;
+    padding-bottom: 50px;
+    color: white; 
+    font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* --- Top Navigation --- */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    color: white;
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: 700;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+.nav-links a:hover {
+    opacity: 1;
+}
+
+.signup-button {
+    background-color: white;
+    color: var(--gradient-start);
+    border: none;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 1em;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+/* --- Main Content Area --- */
+main {
+    max-width: 1300px; 
+    margin: 50px auto 0;
+}
+
+/* --- Input Section (The modern Card) --- */
+#input-section {
+    max-width: 900px; 
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.95); 
+    padding: 50px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-heavy);
+    color: var(--text-color-dark);
+}
+
+h2 {
+    font-size: 2.5em;
+    font-weight: 300;
+    margin-bottom: 5px;
+    color: var(--text-color-dark);
+    border-bottom: none;
+}
+
+.tagline {
+    font-size: 1.1em;
+    margin-bottom: 40px;
+    color: var(--text-color-light);
+}
+
+.group-title {
+    color: var(--secondary-color);
+    margin-top: 30px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e9ecef;
+    padding-bottom: 8px;
+    font-size: 1.1em;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px; 
+}
+
+.form-group {
+    margin-bottom: 25px; 
+    padding-top: 0;
+    position: relative;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+.score-inputs {
+    margin-top: 40px;
+    border-top: 1px dashed #e9ecef;
+    padding-top: 10px;
+}
+
+.score-section h4 {
+    color: var(--text-color-dark);
+    font-weight: 500;
+    font-size: 1em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* --- Minimalist Input Fields --- */
+
+label {
+    display: block;
+    font-weight: 400;
+    color: var(--text-color-light); 
+    font-size: 0.85em; 
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+input[type="text"], input[type="number"], textarea {
+    width: 100%;
+    padding: 8px 0; 
+    border: none;
+    border-bottom: 1px solid #ddd; /* Subtle bottom line */
+    border-radius: 0; 
+    font-size: 16px;
+    background-color: transparent; /* Seamless with card background */
+    color: var(--text-color-dark);
+    transition: border-bottom-color 0.2s;
+}
+
+input:focus, textarea:focus {
+    border-bottom-color: var(--secondary-color); /* Highlight color on focus */
+    box-shadow: none; 
+    outline: none;
+    background-color: transparent;
+}
+
+/* Button Styling */
+.generate-button {
+    width: auto;
+    float: right;
+    margin-top: 30px;
+    background-image: linear-gradient(to right, var(--gradient-start) 0%, var(--gradient-end) 100%);
+    color: white; 
+    padding: 12px 30px;
+    font-size: 1.1em;
+    font-weight: 500;
+    border-radius: 30px; 
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(255, 126, 95, 0.4);
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.generate-button:hover {
+    transform: translateY(-2px);
+    opacity: 0.95;
+    box-shadow: 0 8px 25px rgba(255, 126, 95, 0.6); 
+}
+
+/* --- Output Card Styling --- */
+
+#output-section {
+    margin-top: 40px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#persona-card {
+    background-color: var(--primary-color);
+    border-radius: var(--border-radius);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; 
+    color: var(--text-color-dark);
+}
+
+.card-header {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 15px 30px;
+    grid-column: 1 / -1; 
+    font-size: 1.8em;
+    font-weight: 500;
+}
+
+.card-body {
+    padding: 30px;
+    grid-column: 1 / 2; 
+    border-right: 1px solid #eee;
+}
+
+#persona-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 3px solid var(--secondary-color);
+}
+
+.info-group {
+    margin-bottom: 25px;
+    line-height: 1.4;
+}
+
+.section-title {
+    font-weight: 700;
+    font-size: 0.85em;
+    color: var(--text-color-dark);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    padding-bottom: 3px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.bio-quote {
+    font-style: italic;
+    font-size: 0.9em;
+}
+
+.info-group p strong {
+    font-weight: 500;
+    width: 70px; 
+    display: inline-block;
+}
+
+.tag-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.tag-list li {
+    background-color: #e9ecef;
+    color: var(--text-color-dark);
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-size: 0.8em;
+    font-weight: 500;
+}
+
+.data-column {
+    padding: 30px;
+    grid-column: 2 / 3; 
+    background-color: #f8f8f8; 
+}
+
+.section-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.data-title {
+    color: var(--text-color-dark);
+    margin-bottom: 15px;
+    font-weight: 600;
+    font-size: 1.1em;
+    text-transform: uppercase;
+}
+
+.data-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.data-list li {
+    padding: 5px 0;
+    font-size: 0.9em;
+    color: var(--text-color-light);
+}
+
+/* --- BAR CHART STYLING --- */
+
+.charts-container {
+    margin-top: 10px;
+}
+
+.chart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.chart-label {
+    width: 120px;
+    font-size: 0.85em;
+    font-weight: 500;
+    color: var(--text-color-dark);
+}
+
+.chart-bar-container {
+    flex-grow: 1;
+    height: 8px;
+    background-color: #e9ecef;
+    border-radius: 4px;
+    margin-left: 10px;
+    overflow: hidden;
+}
+
+.chart-bar {
+    height: 100%;
+    background-color: var(--secondary-color); 
+    transition: width 1s ease-out;
+}
+
+.reset-button {
+    background-color: #757575; 
+    margin-top: 25px;
+    width: 100%;
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 1em;
+    font-weight: 500;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.reset-button:hover {
+    background-color: #616161;
+}
+
+.hidden {
+    display: none;
+}
+
+/* --- Responsive Adjustments for Mobile --- */
+@media (max-width: 900px) {
+    .top-nav {
+        padding: 20px;
+    }
+    #input-section {
+        padding: 20px;
+    }
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    #persona-card {
+        grid-template-columns: 1fr;
+    }
+    .card-body {
+        border-right: none;
+        border-bottom: 1px solid #eee;
+    }
+    .data-column {
+        padding: 20px;
+    }
+}

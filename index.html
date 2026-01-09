@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T7ZWSMJ4');</script>
+<!-- End Google Tag Manager -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Persona Creator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="gradient-bg">
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T7ZWSMJ4"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    <nav class="top-nav">
+        <div class="logo">Persona AI</div>
+        <div class="nav-links">
+            <a href="#">Docs</a>
+            <a href="#">Support</a>
+            <button class="signup-button">Sign Up</button>
+        </div>
+    </nav>
+
+    <main>
+        <section id="input-section" class="modern-card">
+            <h2>Create Your Persona</h2>
+            <p class="tagline">Define your user with precision and modern design.</p>
+            
+            <form id="persona-form">
+                
+                <div class="input-group">
+                    <h3 class="group-title">Basic Information</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" required value="Rasmus Fagerlund Ploby">
+                        </div>
+                        <div class="form-group">
+                            <label for="occupation">Occupation:</label>
+                            <input type="text" id="occupation" required value="Marketing Director">
+                        </div>
+                        <div class="form-group">
+                            <label for="age">Age:</label>
+                            <input type="number" id="age" min="18" max="99" required value="32">
+                        </div>
+                        <div class="form-group">
+                            <label for="brands">Favorite Brands (comma separated):</label>
+                            <input type="text" id="brands" value="FedEx, Adobe, Ace Hotel">
+                        </div>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="bio">Bio / Short Quote:</label>
+                        <textarea id="bio" rows="2" required>"I'm looking for a tool that will simplify the planning of our digital ad campaigns."</textarea>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <h3 class="group-title">Qualitative Data</h3>
+                    <div class="form-group full-width">
+                        <label for="goals">Primary Goals (comma separated):</label>
+                        <textarea id="goals" rows="2" required>Increase website traffic, Improve team efficiency, Reduce campaign costs</textarea>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="frustrations">Frustrations (comma separated):</label>
+                        <textarea id="frustrations" rows="2" required>Time-consuming data entry, Slow approval processes, Inconsistent reporting</textarea>
+                    </div>
+                </div>
+
+                <div class="input-group score-inputs">
+                    <h3 class="group-title">Quantitative Scores (1-100)</h3>
+                    
+                    <div class="score-section">
+                        <h4>Personality Traits</h4>
+                        <div class="form-group half-width">
+                            <label for="analytical">Analytical:</label>
+                            <input type="number" id="analytical" min="1" max="100" value="85">
+                        </div>
+                        <div class="form-group half-width">
+                            <label for="creative">Creative:</label>
+                            <input type="number" id="creative" min="1" max="100" value="40">
+                        </div>
+                    </div>
+
+                    <div class="score-section">
+                        <h4>Motivations</h4>
+                        <div class="form-group half-width">
+                            <label for="convenience">Convenience:</label>
+                            <input type="number" id="convenience" min="1" max="100" value="70">
+                        </div>
+                        <div class="form-group half-width">
+                            <label for="price">Price:</label>
+                            <input type="number" id="price" min="1" max="100" value="30">
+                        </div>
+                    </div>
+
+                    <div class="score-section">
+                        <h4>Preferred Channels</h4>
+                        <div class="form-group half-width">
+                            <label for="crm">CRM Software:</label>
+                            <input type="number" id="crm" min="1" max="100" value="75">
+                        </div>
+                        <div class="form-group half-width">
+                            <label for="social">Social Media:</label>
+                            <input type="number" id="social" min="1" max="100" value="55">
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="generate-button">Generate Persona Profile <i class="fas fa-arrow-right"></i></button>
+            </form>
+        </section>
+
+        <section id="output-section" class="hidden persona-output-card">
+            <div id="persona-card">
+                <div class="card-header">
+                    <span id="persona-name" class="card-name-text"></span>
+                </div>
+
+                <div class="card-body">
+                    <img id="persona-avatar" src="https://via.placeholder.com/150x150?text=Avatar" alt="Persona Avatar">
+                    
+                    <div class="info-group">
+                        <p class="section-title">Bio</p>
+                        <p id="persona-bio" class="bio-quote"></p>
+                    </div>
+
+                    <div class="info-group">
+                        <p class="section-title">Background</p>
+                        <p><strong>Age:</strong> <span id="persona-age"></span></p>
+                        <p><strong>Occupation:</strong> <span id="persona-occupation"></span></p>
+                    </div>
+
+                    <div class="info-group">
+                        <p class="section-title">Brands</p>
+                        <ul id="persona-brands-list" class="tag-list"></ul>
+                    </div>
+                </div>
+
+                <div class="data-column">
+                    
+                    <div class="section-grid">
+                        <div class="card-section">
+                            <h3 class="data-title">Goals</h3>
+                            <ul id="persona-goals-list" class="data-list"></ul>
+                        </div>
+                        <div class="card-section">
+                            <h3 class="data-title">Frustrations</h3>
+                            <ul id="persona-frustrations-list" class="data-list"></ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card-section">
+                        <h3 class="data-title">Personality</h3>
+                        <div id="persona-personality-charts" class="charts-container">
+                            </div>
+                    </div>
+
+                    <div class="card-section">
+                        <h3 class="data-title">Motivations</h3>
+                        <div id="persona-motivations-charts" class="charts-container">
+                            </div>
+                    </div>
+
+                    <div class="card-section">
+                        <h3 class="data-title">Preferred Channels</h3>
+                        <div id="persona-channels-charts" class="charts-container">
+                            </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <button id="reset-button" class="reset-button">Create New Persona <i class="fas fa-redo-alt"></i></button>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

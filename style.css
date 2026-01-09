@@ -389,13 +389,13 @@ input:focus, textarea:focus {
     .data-column {
         padding: 20px;
     }
-    
+
 }
 /* Randomize button styling */
 .form-actions {
     display: flex;
     justify-content: flex-end;
-    margin-top: 16px;
+    margin-top: 20px;
 }
 
 .randomize-button {

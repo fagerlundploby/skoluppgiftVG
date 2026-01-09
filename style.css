@@ -411,3 +411,22 @@ input:focus, textarea:focus {
 .randomize-button:hover {
     background: rgba(0, 0, 0, 0.05);
 }
+
+.form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.form-header h2 {
+    margin: 0;
+}
+
+.form-header .tagline {
+    margin-top: 6px;
+}
+
+.randomize-button {
+    white-space: nowrap;
+}

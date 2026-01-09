@@ -51,23 +51,34 @@
             <form id="persona-form">
                 <div class="input-group">
                     <h3 class="group-title">Basic Information</h3>
+
                     <div class="form-grid">
                         <div class="form-group">
                             <label for="name">Name:</label>
                             <input type="text" id="name" required value="Rasmus Fagerlund Ploby">
                         </div>
+
                         <div class="form-group">
                             <label for="occupation">Occupation:</label>
                             <input type="text" id="occupation" required value="Marketing Director">
                         </div>
+
                         <div class="form-group">
                             <label for="age">Age:</label>
                             <input type="number" id="age" min="18" max="99" required value="32">
                         </div>
+
                         <div class="form-group">
                             <label for="brands">Favorite Brands (comma separated):</label>
                             <input type="text" id="brands" value="FedEx, Adobe, Ace Hotel">
                         </div>
+
+                        <!-- New: Avatar upload -->
+                        <div class="form-group">
+                            <label for="avatar">Profile picture:</label>
+                            <input type="file" id="avatar" accept="image/*">
+                        </div>
+                        <!-- End new avatar upload -->
                     </div>
 
                     <div class="form-group full-width">

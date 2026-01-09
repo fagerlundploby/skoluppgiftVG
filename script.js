@@ -5,6 +5,34 @@ document.addEventListener('DOMContentLoaded', () => {
     const resetButton = document.getElementById('reset-button');
     const avatarPlaceholder = "https://via.placeholder.com/150x150?text=JA";
 
+    // --- Avatar upload ---
+    const avatarInput = document.getElementById('avatar');
+    let uploadedAvatarDataUrl = "";
+
+    if (avatarInput) {
+        avatarInput.addEventListener('change', () => {
+            const file = avatarInput.files && avatarInput.files[0];
+            if (!file) {
+                uploadedAvatarDataUrl = "";
+                return;
+            }
+
+            // Basic validation
+            if (!file.type.startsWith('image/')) {
+                uploadedAvatarDataUrl = "";
+                alert("Please choose an image file.");
+                avatarInput.value = "";
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = () => {
+                uploadedAvatarDataUrl = reader.result;
+            };
+            reader.readAsDataURL(file);
+        });
+    }
+
     // --- Randomize button ---
     const randomizeButton = document.getElementById('randomize-button');
 
@@ -172,7 +200,9 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('persona-age').textContent = age;
         document.getElementById('persona-occupation').textContent = occupation;
         document.getElementById('persona-bio').textContent = bio;
-        document.getElementById('persona-avatar').src = avatarPlaceholder;
+
+        // Use uploaded image if available, otherwise placeholder
+        document.getElementById('persona-avatar').src = uploadedAvatarDataUrl || avatarPlaceholder;
 
         // 4. Create lists for Goals, Frustrations, and Brands
         createListItems(goals, document.getElementById('persona-goals-list'));
@@ -210,6 +240,11 @@ document.addEventListener('DOMContentLoaded', () => {
      */
     resetButton.addEventListener('click', () => {
         form.reset();
+
+        // Clear uploaded avatar state
+        uploadedAvatarDataUrl = "";
+        if (avatarInput) avatarInput.value = "";
+
         outputSection.classList.add('hidden');
         inputSection.classList.remove('hidden');
         window.scrollTo(0, 0);

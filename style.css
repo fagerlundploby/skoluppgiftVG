@@ -389,4 +389,25 @@ input:focus, textarea:focus {
     .data-column {
         padding: 20px;
     }
+    
+}
+/* Randomize button styling */
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 16px;
+}
+
+.randomize-button {
+    background: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    padding: 10px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.randomize-button:hover {
+    background: rgba(0, 0, 0, 0.05);
 }

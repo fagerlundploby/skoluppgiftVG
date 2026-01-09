@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-T7ZWSMJ4');</script>
-<!-- End Google Tag Manager -->
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-T8XL92N8');</script>
+    <!-- End Google Tag Manager -->
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Advanced Persona Creator</title>
@@ -15,11 +16,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
+
 <body class="gradient-bg">
     <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T7ZWSMJ4"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T8XL92N8"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <nav class="top-nav">
         <div class="logo">Persona AI</div>
         <div class="nav-links">
@@ -33,9 +38,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <section id="input-section" class="modern-card">
             <h2>Create Your Persona</h2>
             <p class="tagline">Define your user with precision and modern design.</p>
-            
+
             <form id="persona-form">
-                
+
                 <div class="input-group">
                     <h3 class="group-title">Basic Information</h3>
                     <div class="form-grid">
@@ -77,7 +82,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                 <div class="input-group score-inputs">
                     <h3 class="group-title">Quantitative Scores (1-100)</h3>
-                    
+
                     <div class="score-section">
                         <h4>Personality Traits</h4>
                         <div class="form-group half-width">
@@ -115,7 +120,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
                 </div>
 
-                <button type="submit" class="generate-button">Generate Persona Profile <i class="fas fa-arrow-right"></i></button>
+                <!-- Randomize button -->
+                <div class="form-actions">
+                    <button type="button" id="randomize-button" class="randomize-button">
+                        Randomize fields <i class="fas fa-dice"></i>
+                    </button>
+                </div>
+
+                <button type="submit" class="generate-button">
+                    Generate Persona Profile <i class="fas fa-arrow-right"></i>
+                </button>
             </form>
         </section>
 
@@ -127,7 +141,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                 <div class="card-body">
                     <img id="persona-avatar" src="https://via.placeholder.com/150x150?text=Avatar" alt="Persona Avatar">
-                    
+
                     <div class="info-group">
                         <p class="section-title">Bio</p>
                         <p id="persona-bio" class="bio-quote"></p>
@@ -146,7 +160,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
 
                 <div class="data-column">
-                    
                     <div class="section-grid">
                         <div class="card-section">
                             <h3 class="data-title">Goals</h3>
@@ -157,31 +170,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <ul id="persona-frustrations-list" class="data-list"></ul>
                         </div>
                     </div>
-                    
+
                     <div class="card-section">
                         <h3 class="data-title">Personality</h3>
-                        <div id="persona-personality-charts" class="charts-container">
-                            </div>
+                        <div id="persona-personality-charts" class="charts-container"></div>
                     </div>
 
                     <div class="card-section">
                         <h3 class="data-title">Motivations</h3>
-                        <div id="persona-motivations-charts" class="charts-container">
-                            </div>
+                        <div id="persona-motivations-charts" class="charts-container"></div>
                     </div>
 
                     <div class="card-section">
                         <h3 class="data-title">Preferred Channels</h3>
-                        <div id="persona-channels-charts" class="charts-container">
-                            </div>
+                        <div id="persona-channels-charts" class="charts-container"></div>
                     </div>
-                    
                 </div>
             </div>
-            <button id="reset-button" class="reset-button">Create New Persona <i class="fas fa-redo-alt"></i></button>
+
+            <button id="reset-button" class="reset-button">
+                Create New Persona <i class="fas fa-redo-alt"></i>
+            </button>
         </section>
     </main>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
